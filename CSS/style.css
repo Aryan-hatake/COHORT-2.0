@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+
+}
+
+@font-face {
+    font-family: Orbit;
+    src: url(public/Orbit-Regular.ttf);
+}
+@font-face {
+    font-family: Nothing;
+    src:url(public/Ndot-55.otf);
+}
+
+body{
+    background-color: black;
+}
+
+h1{
+    color: red;
+    font-family: Nothing;
+    font-weight: 900;
+    font-size: 70px;
+    text-transform: lowercase;
+    text-align: center;
+    font-style: oblique;
+}
+
+h2{
+    text-align: center;
+}
+
+.csup{
+    background-color: brown;
+    text-align: center;
+    font-size: 50px;
+    font-family: Orbit;
+  
+}
+#nothing{
+    font-family: Nothing;
+    font-size: 100px;
+    text-align: center;
+}
