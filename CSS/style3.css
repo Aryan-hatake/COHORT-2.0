@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
+#car1{
+    width: 100px;
+    height: 300px;
+    background-color: red;
+}
+#car2{
+    width: 150px;
+    height: 300px;
+    background-color: green;
+    position: absolute;
+    /*position absolute pe element lift up hojata hai hava mein aur uski space pe uske niche ka element aajata hai*/
+}
+#car3{
+    width: 200px;
+    height: 300px;
+    background-color: blue;
+}
