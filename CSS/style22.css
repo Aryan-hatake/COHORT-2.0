@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+}
+
+div{
+    height: 100%;
+    width: 100%;
+    background-image: url(https://i.pinimg.com/1200x/b6/99/63/b69963d0ea210ab56eaba89942036201.jpg);
+    background-size: cover;
+    background-position: center;
+    
+}

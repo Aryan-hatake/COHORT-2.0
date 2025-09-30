@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
+
+.parent {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    gap: 4%;
+}
+
+.parent div{
+    height: 280px;
+    width: 280px;
+    border-radius: 28px;
+    background-color: red;
+}
+#linear-gradient{
+    background: linear-gradient(to right bottom,lightseagreen,royalblue );   /*dono ka ratio mat dena varna gradient nhi banega*/
+}
+#radial-gradient{
+    background: radial-gradient(circle farthest-side,yellow 20%,orange 60%,red );  /* shape can be circle or ellipse & direction can be farthest-side and closest-side */
+} 
+#conic-gradient{
+    background: conic-gradient( from 170deg, violet,indigo,blue,green,yellow,orange,red,violet);
+}
+/*conic-gradient([from <angle>] [at <position>], <color-stops>)
+*/
