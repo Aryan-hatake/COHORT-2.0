@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+}
+html, body {
+    height: 100%;
+    width: 100%;
+  
+}
+h1{
+    background-color: black;
+}
+main{
+    width: 100vw;
+    height: 100%;
+      display: flex;
+    gap: 10px;
+    background-color: black;
+    overflow: auto;
+}
+div{
+    height: 400px;
+    width: 400px;
+
+}
+.one{
+    background-color: red;
+   flex-shrink: 0;
+}
+.two{
+    background-color: blue;
+   flex-shrink: 0;
+}
+.three{
+    background-color: green;
+  flex-shrink: 0;
+}
+.four{
+    background-color: yellow;
+  flex-shrink: 0;
+}

@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
+.box1{
+    height: 400px;
+    width: 400px;
+    background-color: red;
+    color: white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);  /*translate moves element in percent the percent is of  the size of div*/
+    /* or use translate(-50%,-50%) */
+}
+/*box 1 ke side ka corner center hua bus without translate*/
+
+
