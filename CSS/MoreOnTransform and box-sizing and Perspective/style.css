@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    background: #000;
+}
+
+.box1 {
+    height: 100px;
+    width: 100px;
+    border: 5px solid white;
+    background-color: red;
+    box-sizing: border-box;
+    /* box-sizing se height or width jitna given hai utna hi rhega todha bhi badega nhi ,box-sizing nhi diya toh border ka additional pixel add hojayga 100px ki height hai element ki or box-sizing nhi hai toh given border ka size 5px upar niche aur left right mein 5 px se bad jayega jise total width aur height 110px hojaygi */
+}
+
+.box2 {
+    height: 100px;
+    width: 100px;
+    background-color: blue;
+}
+
+.box3 {
+    height: 50vh;
+    width: 100vw;
+    display: flex;
+    margin-top: 10%;
+    justify-content: center;
+       perspective: 1000px;   /* perspective matlab jyada pass uske element se jise vho kaise rotate hora vho clearly dikhe jis child ka perspective dekhna uske parent ko hi perspective property dena */
+
+}
+
+.box3 img {
+    height: 50vh;
+    width: 50vw;
+    object-fit: cover;
+    transform: rotateX(60deg);
+   
+}
+.card{
+    height: 300px;
+    width: 300px;
+    border-radius: 30px;
+    position: relative;
+     
+    overflow: hidden;
+}
+.card img{
+    object-fit: contain;
+}
+.bottom{
+    background: linear-gradient(transparent,black);
+    width: 100%;
+    display: flex;
+    font-size: 10px;
+    justify-content: space-around;
+    color: white;
+    position: absolute;
+    bottom: -10%;
+    transition: bottom 0.1s ease;
+   
+  
+}
+.card:hover .bottom{
+  bottom: 0;
+  color: black;
+}
