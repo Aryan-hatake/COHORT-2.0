@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body {
+    height: 100%;
+    width: 100%;
+    background: #000;
+}
+.box{
+    height: 100px;
+    width: 100px;
+    background: crimson;
+    transform: translateZ(10%);
+    margin-top: 2px;
+}
+.box:nth-child(2n-1){  /*2n-1=[1 se odd element] 2n=[even element] 3n=[3 se odd element]*/
+    background: royalblue;
+    border-bottom: 2px dashed white;
+}
+
+.parent{
+    display: flex;
+    gap: 10px;
+    width: 100vw;
+   overflow: auto;
+}
+.parent::-webkit-scrollbar{
+    display: none;
+}
+.img{
+    height: 500px;
+    width: 500px;
+    border-radius: 50px;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+.img img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  
+
+}
