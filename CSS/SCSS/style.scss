@@ -1,0 +1,73 @@
+
+@import "footer";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
+
+h1{
+    color: blue;
+}
+//scss gets compiled into css by that extension as browser only understand html,css and javascript
+
+@mixin flex-center(){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+@mixin button($bg-clr:blue){
+    padding: 4px;
+    cursor: pointer;
+    background-color: $bg-clr;
+    margin: 10px 10px 0px 0px;
+    border-radius: 10px;
+    color: white;
+    
+
+}
+
+.red{
+    @include button(red);  //variable using mixin
+}
+.blue{
+    @include button(rgb(6, 6, 78));
+}
+
+
+main{
+    height: 100%;
+    width: 100%;
+    background: #0f0707;
+    @include flex-center();
+
+    section{
+        background-color: white;
+        @include flex-center();
+        flex-direction: column;
+        padding: 10px;
+        border-radius: 23px;
+
+        h1{
+            color: black;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+    }
+
+
+}
+footer{
+    @include footer-style(30px);
+}
+
+// 1. nestinggg like html structure
+// 2. mixin use to avoid using repetative code use personalized default styling
+
+// 3. in partial import divide your scss into chunks starting with _section.scss and import with @import "section" and include the mixin

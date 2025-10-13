@@ -1,0 +1,9 @@
+@mixin footer-style($text-size:10px){
+    width: 100vw;
+    background: yellow;
+    text-align: center;
+    padding: 10px;
+    font-size: $text-size;
+    position: absolute;
+    bottom:0;
+}
