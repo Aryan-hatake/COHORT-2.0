@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body {
+    height: 100%;
+    width: 100%;
+    font-size: 200px;
+}
+main{
+    background: #000;
+    width: 10rem;
+}
+.box{
+    background: red;
+    height: 1rem;
+    width: clamp(100px,10vw,5em); //
+}
