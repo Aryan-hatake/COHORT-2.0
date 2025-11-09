@@ -12,7 +12,7 @@ let arr = [1,2,3,4,5];
 function spread(a,b,c,d){  //parameter
      console.log(a,b,c,d);
 }
-spread(...arr) //argument  //spred or rest
+spread(...arr) //argument  //spread or rest
 
 
 //destructure argument
