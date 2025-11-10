@@ -34,3 +34,21 @@ a(function callback(){       //the function that gets accepted in higher order f
 
 
 //first class function is concept in programming where the function that can be used in variable in any particular programming language is known as first class function
+
+let loop = {
+     name:"aryan",
+     age:19,
+     role:"SDE"
+}
+
+// for printing key 
+
+for(let key in loop){
+     console.log(key)
+}
+
+//for printing value
+
+for(let key in loop){
+     console.log(loop[key])   //not loop.key 
+}
