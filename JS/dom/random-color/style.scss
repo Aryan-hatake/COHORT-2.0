@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+    .box{
+        background: red;
+        border: 0.2rem solid white;
+        border-radius: 1rem;
+        width: 60%;
+        height: 60%;
+    }
+    button{
+        margin-top: 3rem;
+        padding: 1rem 4rem;
+        border-radius: 0.6rem;
+        border: none;
+        background: red;
+        color: white;
+        font-size: 2rem;
+        cursor: pointer;
+
+        &:active{
+         transform: scale(1.1);
+        }
+    }
+}
