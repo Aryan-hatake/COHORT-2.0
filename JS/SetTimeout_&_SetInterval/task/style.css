@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+html main, body main {
+  background-color: #000;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+html main .card, body main .card {
+  width: 20rem;
+  height: 10rem;
+  background-color: white;
+  border-radius: 0.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  align-items: center;
+}
+html main .card .progress, body main .card .progress {
+  width: 80%;
+  height: 1rem;
+  background: gray;
+  border-radius: 50rem;
+  position: relative;
+}
+html main .card .progress .pro-inner, body main .card .progress .pro-inner {
+  position: absolute;
+  width: 0;
+  height: 100%;
+  background: rgb(73, 119, 4);
+  border-radius: 50rem;
+}
+html main .card .bottom, body main .card .bottom {
+  display: flex;
+  width: 70%;
+  justify-content: space-between;
+}
+html main .card .bottom span, body main .card .bottom span {
+  font-size: 2rem;
+  font-family: monospace;
+}
+html main .card .bottom button, body main .card .bottom button {
+  padding: 0.6rem 1rem;
+  border-radius: 0.4rem;
+  border: none;
+  background-color: green;
+  color: white;
+  font-size: 1rem;
+  font-family: monospace;
+  cursor: pointer;
+}
+html main .card .bottom button:active, body main .card .bottom button:active {
+  scale: 0.9;
+}/*# sourceMappingURL=style.css.map */
