@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  background: #000;
+}
+html .box, body .box {
+  height: 16rem;
+  width: 16rem;
+  background: radial-gradient(100px at 200px 20px, red, black);
+  border: 1px solid white;
+}/*# sourceMappingURL=style.css.map */

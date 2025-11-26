@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body {
+    height: 100%;
+    width: 100%;
+    background: #000;
+    .box{
+        height: 16rem;
+        width: 16rem;
+        // background: linear-gradient(to right in hsl,red,blue);  or in okla
+        background: radial-gradient(100px at 200px 20px ,red,black); 
+        //(size of radius  at x y)
+        border: 1px solid white;
+    }
+
+}
