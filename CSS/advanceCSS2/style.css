@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+html main, body main {
+  height: 100%;
+  width: 100%;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+html main .box, body main .box {
+  height: 20rem;
+  width: 35rem;
+  background: conic-gradient(from 63deg, red, blue, white, black);
+  box-shadow: 0 0 0.2rem 1rem gold;
+}/*# sourceMappingURL=style.css.map */
