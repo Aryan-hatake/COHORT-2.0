@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    background: #000;
+}
+
+@property --boxHeight {
+    syntax: "<length>";
+    initial-value: 10rem;
+    inherits: false;
+}
+
+@property --boxWidth {
+    syntax: "<length>";
+    initial-value: 20rem;
+    inherits: false;
+}
+
+@property --boxBgClr {
+    syntax: "<color>";
+    initial-value: red;
+    inherits: false;
+}
+
+/*padding-inline -- > for x & y*/
+
+.box {
+
+    --boxWidth: 30rem;  
+    --boxHeight: 10rem;
+    --boxBgClr:red;
+    /* assigned the value */
+    height: var(--boxHeight);
+    width: var(--boxWidth);
+    transition: all 1s ease-in;
+    background-color: var(--boxBgClr);
+    animation: changeBg 10s linear;
+}
+.box:hover{
+    --boxHeight:30rem
+}
+
+
+@keyframes changeBg {
+    from{
+        --boxBgClr:red
+    }
+    to{
+        --boxBgClr:yellow
+    }
+}
+/* 
+@property makes CSS variables behave like real typed CSS properties that can transition and animate. not like dead strings seen by browser */
+
+/* what type the variable is (<length>, <color>, etc)
+
+how to interpolate values between frames
+
+This unlocks smooth transitions, animations, and keyframes involving custom properties. */
+
+/* 🚫 What @property is NOT meant for
+
+❌ Not for setting default styles
+❌ Not for reducing repetition
+❌ Not for centralizing variable definitions
+❌ Not a replacement for --var:value */
+
+
+/* TYPES--> */
+
+/* <length>
+
+<color>
+
+<number>
+
+<transform-list> */

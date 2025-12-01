@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+html .box, body .box {
+  height: 10rem;
+  width: 20rem;
+  border: 1px solid white;
+  animation: changingProps 4s linear 4s 2 alternate-reverse both;
+  animation: name duration timing-function delay iteration-count direction fill-mode;
+}
+
+@keyframes changingProps {
+  from {
+    background: rgb(90, 90, 2);
+    border-radius: 10rem 30rem;
+  }
+  to {
+    background: gold;
+    border: 0px;
+    border-radius: 30rem 10rem;
+  }
+}/*# sourceMappingURL=style.css.map */

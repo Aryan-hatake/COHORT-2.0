@@ -20,5 +20,15 @@ html main .box, body main .box {
   height: 20rem;
   width: 35rem;
   background: conic-gradient(from 63deg, red, blue, white, black);
+  animation: rotateConic 1s linear infinite;
   box-shadow: 0 0 0.2rem 1rem gold;
+}
+
+@keyframes rotateConic {
+  from {
+    background: conic-gradient(from 63deg, red, blue, white, black, red);
+  }
+  to {
+    background: conic-gradient(from 20deg, black, white, blue, red, black);
+  }
 }/*# sourceMappingURL=style.css.map */

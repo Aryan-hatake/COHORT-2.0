@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body {
+    height: 100%;
+    width: 100%;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .box{
+        height: 10rem;
+        width: 20rem;
+        border: 1px solid white;
+        animation: changingProps 4s linear 4s  2 alternate-reverse  both;
+
+
+        //the fill mode slot is the last slot in animation
+
+        // backwards: as image is the poster if the video is paused or delay before starting, backward also keeps the from{} animation styles as poster during the interval of delay time before starting of animation 
+        
+        //(only works if there is ongoing delay as without delay how can we show the poster)
+
+        //forward: as the animation ends instead of keeping only default styles, forwards add the to{} styles property as well in the default styles after once the animation has been executed 
+
+        //optimal case use both which includes forwards as well backward
+
+        animation: name duration timing-function delay iteration-count direction fill-mode;
+
+        //direction says how the animation sequence from, from{} - to{} will go  
+        // values (1. normal , 2. reverse, 3. alternate, 4.alternate-reverse)
+    }
+}
+@keyframes changingProps {
+
+    from{
+             background: rgb(90, 90, 2);
+             border-radius: 10rem 30rem;
+    }
+
+    to{
+               background: gold;
+               border: 0px;
+               border-radius: 30rem 10rem;
+    }
+    
+}
