@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body {
+    height: 100%;
+    width: 100%;
+
+    main{
+        height: 100%;
+        width: 100%;
+        background: #000;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+      
+
+
+    &:has(.box:hover) .box{
+        scale: 0.9;
+        opacity: 0.6;          
+
+        //has is a parent selector 
+
+        //&:has(.box:hover) .box ==> agar main ke pass koi .box hai aur uspe koi hover kara toh sare .box ko scale:0.9 and opacity 0.6 dena
+    }
+
+        .box{
+            height: 200px;
+            width: 200px;
+            transition: all 0.3s ease-in-out;
+
+            &:hover{
+                scale: 1.2 !important;
+                opacity: 1 !important;
+            }
+        }
+        .red{
+            background: red;
+        }
+        .green{
+            background: green;
+        }
+        .blue{
+            background: blue;
+        }
+    }
+}

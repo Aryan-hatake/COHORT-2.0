@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+html main, body main {
+  height: 100%;
+  width: 100%;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+html main:has(.box:hover) .box, body main:has(.box:hover) .box {
+  scale: 0.9;
+  opacity: 0.6;
+}
+html main .box, body main .box {
+  height: 200px;
+  width: 200px;
+  transition: all 0.3s ease-in-out;
+}
+html main .box:hover, body main .box:hover {
+  scale: 1.2 !important;
+  opacity: 1 !important;
+}
+html main .red, body main .red {
+  background: red;
+}
+html main .green, body main .green {
+  background: green;
+}
+html main .blue, body main .blue {
+  background: blue;
+}/*# sourceMappingURL=style.css.map */
