@@ -1,6 +1,6 @@
 jab code chota hota hai tab bina koi guideline to maintain the code structure ke bina bhi kaam chal jata hai
 
-//but jab code 200000k+ lines bada code structure rheta hai tab use maintain karna jaruri hai 
+//but jab code 200000k+ lines  ka ho  bada code structure rheta hai tab use maintain karna jaruri hai 
 
 // ek room banane mein koi architect ya majbdur nhi chaiye khud krskte hai
 

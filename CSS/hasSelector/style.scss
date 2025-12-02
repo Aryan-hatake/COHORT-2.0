@@ -35,7 +35,7 @@ html, body {
 
             &:hover{
                 scale: 1.2 !important;
-                opacity: 1 !important;
+                opacity: 1 !important;  // !important isliye taki hum has selector wali properties ko override kr sake
             }
         }
         .red{
