@@ -1,0 +1,3 @@
+ Kuta();
+
+console.log(k)
