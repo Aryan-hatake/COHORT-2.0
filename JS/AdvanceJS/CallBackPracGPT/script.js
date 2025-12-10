@@ -1,81 +1,170 @@
-
-// function loadFile(path,callback){
-//     console.log(`loading ${path} File...`)
-//     setTimeout(()=>{
-//         callback(path)
-//     },2000)
-// }
-
-// loadFile("aryan.txt",function(path){console.log("Hello from ",path)})
-
-// function filterAndDo(arr, predicateFn, actionFn){
-//     let even =  predicateFn(arr , actionFn);
-//     actionFn(even)
-// }
-
-// function predicateFn(arr , actionFn){
-//     let even  = arr.filter(e=> e%2=== 0)
-//     return even;
-
-// }
-
-// function actionFn(arr){
-//     console.log(arr, "- actionFn")
-// }
-
-// filterAndDo([1,2,3,4],predicateFn,actionFn)
-
-
-// function login(username,pass,callback){
-//     let ok = confirm("are you sure about your given data ?")
-
-//     console.log("Verifying...")
+// function runAfterDelay(time,cb){
 
 //     setTimeout(()=>{
-         
-//         if(username==="aryan" && pass === 12345){
-//             callback(null,101)
-//         }
-//         else{
-//             callback(Error
-//             , null)
-//         }
+//         cb()
+//     },time)
 
-//     },2000)
+// }
+// runAfterDelay(2000,function(){
+//     console.log("Executed After Delay")
+// })
+
+//------------------------------------------------------------------------------
+
+// function squareAfterDelay(number,callback){
+//     setTimeout(()=>{
+//          callback(number*number);
+//     },1000)
 // }
 
-// function getUserData(userId, callback){
-//     let user = {
-//         id:userId,
-//         name:"aryan",
-//         email:"aryan@a"
+// squareAfterDelay(4,function(square){
+//     console.log("Result is ",square)
+// })
+
+//----------------------------------------------------------------------------
+
+// function getUser(username,callback){
+//     setTimeout(()=>{
+//           callback({id:1,username:"aryan"})
+//     },1000)
+// }
+
+// function getPosts(userId,callback){
+
+//     setTimeout(()=>{
+//         callback(["helo","long time no see","bella ciao"])
+//     },1000)
+// }
+// getUser("aryans",function(data){
+//    getPosts(data.id,function(allPosts){
+//       console.log(data.username)
+//       console.log(allPosts)
+//    })
+// })
+
+//---------------------------------------------------------------------------
+
+// function loginUser(email,callback){
+//    setTimeout(()=>{
+//       callback({userId:101,email})
+//    },1000)
+// }
+
+// function fetchSettings(userId,callback){
+//     console.log("User logged in :",userId)
+//       setTimeout(()=>{
+//         callback({theme:"dark",notifications:true})
+//       },1000)
+// }
+// function startApp(settings,callback){
+//     console.log("Settings loaded: ",settings)
+//      setTimeout(()=>{
+//        callback(settings.theme)
+//      },1000)
+// }
+
+// loginUser("aryan@a",function(data){
+//      fetchSettings(data.userId,function(settings){
+//             startApp(settings,function(theme){
+//                  console.log("App started with theme: ",theme)
+//             })
+//      })
+// })
+
+//--------------------------------------------------------------------------------
+
+// function connectToDB(callback) {
+//     let rand = Math.floor(Math.random() * 10);
+
+//     if (rand < 5) {
+//         console.log('DB connected !');
+//         setTimeout(() => {
+//             callback({ id: 7, name: "Aryan" });
+//         }, 1000)
 //     }
-//     callback(null,user)
+//     else {
+//         console.log("DB connection Failed :( ")
+//     }
 // }
 
-// login("aryan",12345,function(err,))
+// function getUserData(data, callback) {
+//     setTimeout(() => {
+//         callback(data.id)
+//     }, 1000)
 
+// }
+// function getTransactions(userId, callback) {
+//     setTimeout(()=>{
+//          callback([100,250,-50])
+//     },1000)
+// }
 
-async function fetchWithretry(url, retries , attempt , callback){
-   
+// connectToDB(function(data){
+//       getUserData(data,function(id){
+//           getTransactions(id,function(transaction){
+//              console.log(id)
+//              console.log("Your transaction",transaction)
+//           })
+//       })
+// })
 
+//--------------------------------------------------------------------------------------
 
-    let callApi = await fetch(url)
-    let text  = await callApi.text()
-    if(callApi.ok){
-        callback("sucess !")
-    }
-    else{
-        callback("failed !")
+function signup(email, callback) {
+    console.log("registering your email id...")
 
-        if(attempt<retries){
+    setTimeout(() => {
+        callback(null, email)
+    }, 1000)
+}
+function emailVerify(email, callback) {
 
-            console.log("retrying...")         
-            setTimeout(()=>{
-                fetchWithretry(url,retries--,attempt++,function(result){ console.log(result)})
-            })
-        }
-    }
+    console.log("verifying your email...")
+
+    setTimeout(() => {
+        console.log("your email has been verified!")
+        callback(null, email)
+    }, 2000)
+
+}
+function createProfile(email, callback) {
+    console.log("creating your profile...")
+    let name  = email.slice(0,email.indexOf("@"))
+    setTimeout(() => {
+        callback(null,name)
+    }, 1000)
+}
+function showWelcomePage(name,callback) {
+    setTimeout(()=>{
+        callback(null,name);
+    },1000)
 }
 
-fetchWithretry("https://jsonplaceholder.typicode.com/todos/1", 3 , 0,function(result){ console.log(result)})
+signup("aryan@gmail.com", function (err, email) {
+    if (err) {
+        console.log(err)
+        return;
+    }
+
+    emailVerify(email, function (err, email) {
+        if (err) {
+            console.log(err)
+            return;
+        }
+        createProfile(email,function(err,name){
+            if(err){
+                console.log(err)
+                return;
+            }
+            showWelcomePage(name,function(err){
+                if(err){
+                    console.log(err)
+                    return
+                }
+                console.log(name,"your profile has been created !")
+            })
+
+        })
+    })
+
+})

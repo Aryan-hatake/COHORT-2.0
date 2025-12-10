@@ -9,21 +9,49 @@
 
 //----------------------------------------------------------------------
 
-function getUser(username,callback){
+// function getUser(username,callback){
+//     setTimeout(()=>{
+//         callback({id:1,username:username})
+//     },1000)
+// }
+
+// function getUserPosts(userId,callback){
+//     setTimeout(()=>{
+//         callback([1,2,3,4,5])
+//     })
+// }
+
+// getUser("aryan",function({id,username}){
+//     getUserPosts(id,function(allPosts){
+//         console.log(username,allPosts)
+//     })
+// })
+
+//------------------------------------------------------
+
+function loginUser(callback){
+    
     setTimeout(()=>{
-        callback({id:1,username:username})
+        callback({userId:1,username:"aryan"})
     },1000)
 }
 
-function getUserPosts(userId){
-    let user = {
-        id:1,
-        
-    }
+function fetchPermissions(id,callback){
+ 
+    console.log(id)
+     setTimeout(()=>{
+         callback(["read","write","delete"])
+     },1000)
 }
 
-getUser("aryan",function({id,username}){
+function loadDashboard(){
+      setTimeout(()=>{
+         console.log("dashboard loaded...")
+      },1000)
+}
 
-    console.log(id)
-    getUserPosts(id)
+loginUser(function(data){
+    fetchPermissions(data.userId,function(permissions){
+        loadDashboard(permissions)
+    })
 })
