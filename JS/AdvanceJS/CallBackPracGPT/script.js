@@ -110,61 +110,120 @@
 
 //--------------------------------------------------------------------------------------
 
-function signup(email, callback) {
-    console.log("registering your email id...")
+// function signup(email, callback) {
+//     console.log("registering your email id...")
 
-    setTimeout(() => {
-        callback(null, email)
-    }, 1000)
-}
-function emailVerify(email, callback) {
+//     setTimeout(() => {
+//         callback(null, email)
+//     }, 1000)
+// }
+// function emailVerify(email, callback) {
 
-    console.log("verifying your email...")
+//     console.log("verifying your email...")
 
-    setTimeout(() => {
-        console.log("your email has been verified!")
-        callback(null, email)
-    }, 2000)
+//     setTimeout(() => {
+//         console.log("your email has been verified!")
+//         callback(null, email)
+//     }, 2000)
 
-}
-function createProfile(email, callback) {
-    console.log("creating your profile...")
-    let name  = email.slice(0,email.indexOf("@"))
-    setTimeout(() => {
-        callback(null,name)
-    }, 1000)
-}
-function showWelcomePage(name,callback) {
+// }
+// function createProfile(email, callback) {
+//     console.log("creating your profile...")
+//     let name  = email.slice(0,email.indexOf("@"))
+//     setTimeout(() => {
+//         callback(null,name)
+//     }, 1000)
+// }
+// function showWelcomePage(name,callback) {
+//     setTimeout(()=>{
+//         callback(null,name);
+//     },1000)
+// }
+
+// signup("aryan@gmail.com", function (err, email) {
+//     if (err) {
+//         console.log(err)
+//         return;
+//     }
+
+//     emailVerify(email, function (err, email) {
+//         if (err) {
+//             console.log(err)
+//             return;
+//         }
+//         createProfile(email,function(err,name){
+//             if(err){
+//                 console.log(err)
+//                 return;
+//             }
+//             showWelcomePage(name,function(err){
+//                 if(err){
+//                     console.log(err)
+//                     return
+//                 }
+//                 console.log(name,"your profile has been created !")
+//             })
+
+//         })
+//     })
+
+// })
+
+//--------------------------------------------------------------------------------
+
+function scanQR(details,callback){
+    console.log("Scanning QR code...")
     setTimeout(()=>{
-        callback(null,name);
+        console.log("QR code Scanned.")
+        callback(null,details)
     },1000)
 }
+function fetchPaymentDetails(details,callback){
+    console.log(`fetching ${details.To} Bank acc...`)
+    let amount = details.amount
+    setTimeout(()=>{
+        console.log(details.To," Bank Acc fetched.")
+        callback(null,amount)
+    },1000)
+}
+function processPayment(amount,callback){
+    console.log("Processing Payment...")
+    setTimeout(()=>{
+       callback(null,true,amount)
+    },1000)
 
-signup("aryan@gmail.com", function (err, email) {
-    if (err) {
-        console.log(err)
-        return;
+}
+function showSuccess(amount,status,callback){
+    if(status){
+
+            callback(null,`Transaction of ${amount} have been made !`) 
     }
-
-    emailVerify(email, function (err, email) {
-        if (err) {
+    else{
+        callback("Payment failed",null)
+    }
+    }
+scanQR({amount:30,To:"General Store"},function(err,details){
+    if(err){
+        console.log(err);
+        return
+    }
+    fetchPaymentDetails(details,function(err,amount){
+        if(err){
             console.log(err)
-            return;
+            return
         }
-        createProfile(email,function(err,name){
+        processPayment(amount,function(err,status,amount){
             if(err){
-                console.log(err)
-                return;
+                console.log(err);
+                return
             }
-            showWelcomePage(name,function(err){
+            showSuccess(amount,status,function(err,message){
                 if(err){
                     console.log(err)
                     return
                 }
-                console.log(name,"your profile has been created !")
+                console.log(message)
             })
-
         })
     })
-
 })
