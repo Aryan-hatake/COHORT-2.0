@@ -9,8 +9,8 @@ let arr = [1,2,3,4,5];
 
 //spread argument
 
-function spread(a,b,c,d){  //parameter
-     console.log(a,b,c,d);
+function spread(a,b,...c){  //parameter
+     console.log(a,b,c);
 }
 spread(...arr) //argument  //spread or rest
 
