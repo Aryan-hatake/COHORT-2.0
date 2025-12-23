@@ -8,7 +8,7 @@ const App = () => {
    const arr = [90,30,45,70];
 
   return (
-    <div className=' bg-black h-screen p-20'>
+    <div onDra className=' bg-black h-screen p-20'>
         {arr.map((e)=>{            //as map returns new array
           return <h1>{e}</h1>
         })}
