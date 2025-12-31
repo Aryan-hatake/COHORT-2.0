@@ -1,0 +1,9 @@
+body{
+  background: #000;
+}
+form{
+  padding: 4rem;
+  background: #333;
+  display: flex;
+  gap: 2rem;
+}
