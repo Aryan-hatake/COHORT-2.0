@@ -1,0 +1,10 @@
+@import "tailwindcss";
+body{
+  background: black;
+}
+.red{
+  color: white;
+  background: red;
+  padding: 4px;
+  border-radius: 1rem;
+}
