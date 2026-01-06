@@ -11,7 +11,7 @@ const Card = (props) => {
       
   return (
     <div className='p-10 bg-white w-fit rounded mb-10 text-3xl'>
-      This is portfolio card of  of age  {props}
+      This is portfolio card of  of age  {props.user}
     </div>
   )
 }
