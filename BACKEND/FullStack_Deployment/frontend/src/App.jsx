@@ -14,7 +14,7 @@ function App() {
   const [Update, setUpdate] = useState({ update: false, id: null })
 
   const fetchTask = async () => {
-    const FetchedTask = await axios.get("http://localhost:3000/api/task")
+    const FetchedTask = await axios.get("https://cohort-2-0-9o69.onrender.com/api/task")
 
     setTasks(FetchedTask.data.alltask)
   }
@@ -24,7 +24,7 @@ function App() {
     const { task, time } = e.target.elements
 
     if (!Update.update) {
-      await axios.post("http://localhost:3000/api/task", {
+      await axios.post("https://cohort-2-0-9o69.onrender.com/api/task", {
         task: task.value,
         time: time.value
       })
@@ -34,17 +34,17 @@ function App() {
 
 
       if (task.value.trim() !== '' && time.value.trim() === '') {
-        await axios.patch(`http://localhost:3000/api/task/${Update.id}`, {
+        await axios.patch(`https://cohort-2-0-9o69.onrender.com/api/task/${Update.id}`, {
           task: task.value.trim()
         });
       }
       else if (task.value.trim() === '' && time.value.trim() !== '') {
-        await axios.patch(`http://localhost:3000/api/task/${Update.id}`, {
+        await axios.patch(`https://cohort-2-0-9o69.onrender.com/api/task/${Update.id}`, {
           time: time.value.trim()
         });
       }
       else {
-        await axios.patch(`http://localhost:3000/api/task/${Update.id}`, {
+        await axios.patch(`https://cohort-2-0-9o69.onrender.com/api/task/${Update.id}`, {
           task: task.value.trim(),
           time: time.value.trim()
         });
@@ -64,7 +64,7 @@ function App() {
 
   const deleteTask = async (id) => {
 
-    await axios.delete("http://localhost:3000/api/task/" + id);
+    await axios.delete("https://cohort-2-0-9o69.onrender.com/api/task/" + id);
     fetchTask()
   }
 
